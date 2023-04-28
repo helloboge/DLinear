@@ -214,12 +214,12 @@ class Exp_Main(Exp_Basic):
         
         if test:
             print('loading model')
-            self.model.load_state_dict(torch.load(os.path.join('/kaggle/working/checkpoints/' + setting, 'checkpoint.pth')))
+            self.model.load_state_dict(torch.load(os.path.join('/kaggle/working/DLinear/checkpoints/' + setting, 'checkpoint.pth')))
 
         preds = []
         trues = []
         inputx = []
-        folder_path = '/kaggle/working/test_results/' + setting + '/'
+        folder_path = '/kaggle/working/DLinear/test_results/' + setting + '/'
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
 
@@ -283,7 +283,7 @@ class Exp_Main(Exp_Basic):
         inputx = np.concatenate(inputx, axis=0)
 
         # result save
-        folder_path = '/kaggle/working/results/' + setting + '/'
+        folder_path = '/kaggle/working/DLinear/results/' + setting + '/'
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
 
@@ -350,7 +350,7 @@ class Exp_Main(Exp_Basic):
             preds = pred_data.inverse_transform(preds)
         
         # result save
-        folder_path = '/kaggle/working/results/' + setting + '/'
+        folder_path = '/kaggle/working/DLinear/results/' + setting + '/'
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
 
